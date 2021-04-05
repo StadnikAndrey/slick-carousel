@@ -2,7 +2,7 @@
 верстка слайдера фотографий (slick-carousel) для desktop и mobile 
 
 ## Технологии и инструменты: 
-HTML, CSS  
+HTML, SCSS  
 webpack 5  
 npm  
 плагин "slick-carousel"  
