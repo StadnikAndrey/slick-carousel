@@ -1,0 +1,347 @@
+// если подключать стили слайдера scss:
+// $slick-font-path: "/node_modules/slick-carousel/slick/fonts/" !default;
+// $slick-font-family: "slick" !default;
+// $slick-loader-path: "/node_modules/slick-carousel/slick/" !default;
+// $slick-arrow-color: black !default;
+@import 'slick-carousel/slick/slick.css';
+@import 'slick-carousel/slick/slick-theme.css';  
+*{
+    outline: none !important;
+}
+.wrap{     
+    max-width: 712px;
+    margin: 50px auto 0 auto;
+    font-family: "TT Norms" ;
+    padding: 0 20px 100px 20px;
+}     
+img{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+}   
+.slider-nav{       
+    display: flex;
+    align-items: center;  
+    position: relative;     
+    & .slick-list{
+        flex: 1;                
+    }
+    & .slick-track {        
+        padding: 75px 0 50px 0;
+    }
+    &::after{
+        content: '';
+        position: absolute;
+        z-index: -1;         
+        height: 2px;
+        background-color: #000;               
+        left: 0;
+        right: 50%; 
+        margin-right: -50vw;
+    }
+    & .slick-next{
+        position: relative;
+        transform: translate(0, 0);             
+        right: 0;
+        width: 56px;
+        height: 56px;
+        border: 2px solid #000;
+        border-left: 1px solid #000;
+        background: #fff;
+        background-image: url('./../img/arrow_right.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-left: 56px;         
+        &::before{
+            font-size: 0;
+        }
+        &:hover{
+            border: 2px solid #0054A6;
+            border-left: 1px solid #0054A6;         
+            background-image: url('./../img/arrow_right_hover.svg'); 
+            background-repeat: no-repeat;
+            background-position: center;           
+        } 
+    }
+    & .slick-prev{            
+        left: auto;
+        right: 56px;      
+        z-index: 1000;         
+        width: 56px;
+        height: 56px;
+        border: 2px solid #000;
+        border-right: 1px solid #000;         
+        background: #fff;
+        background-image: url('./../img/arrow_left.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        &::before{
+            font-size: 0;
+        }
+         &:hover{
+            border: 2px solid #0054A6;
+            border-right: 1px solid #0054A6;         
+            background-image: url('./../img/arrow_left_hover.svg'); 
+            background-repeat: no-repeat;
+            background-position: center;           
+        }      
+    }
+    & .slick-prev.slick-disabled{
+        border: 2px solid #E8E8E9;
+        border-right: 1px solid #000;
+        background-image: url('./../img/arrow_left_disabled.svg'); 
+        background-repeat: no-repeat;
+        background-position: center;       
+    }     
+    & .slick-next.slick-disabled{
+        border: 2px solid #E8E8E9;
+        border-left: 1px solid #000;
+        background-image: url('./../img/arow_right_disabled.svg'); 
+        background-repeat: no-repeat;
+        background-position: center;    
+    }
+} 
+.nav_year{
+    font-size: 13px;
+    font-weight: 500;
+    padding: 10px 0 0 0;
+    transition: .2s;
+}
+.nav_img{       
+    border: 2px solid #000;     
+    background: #000;   
+    width:56px;
+    height:56px;      
+    transition: .2s;    
+    transform-origin: 0 50%;
+    & img{          
+     width:100%;
+     height: 100%;
+     object-fit: cover;
+    }
+    &:hover{
+        cursor: pointer;
+    }
+}
+// модификаторы для js start
+.slick-prev--border_right{
+    border-right: 1px solid #0054A6 !important;     
+}
+.slick-next--border_left{
+    border-left: 1px solid #0054A6 !important;     
+}
+.slider-nav-slide--active {
+    & .nav_img{
+        transition: .2s;          
+        transform: scale(1.29) !important;               
+    } 
+    & .nav_year{         
+        transform: translate(0,10px ) !important;
+    }     
+}
+// модификаторы для js end
+.wrap_slider_for{
+    position: relative;
+}
+.for_counter{
+    position: absolute;
+    right: 0;
+    top: 10px;
+    z-index: 999;
+    font-size: 16px;
+    opacity: .4;
+    font-weight: 500px;
+}
+.for_top{
+    display: flex;
+    justify-content: space-between;
+}
+.for_top_img{     
+    max-width: 300px; 
+    height: fit-content;
+    padding: 2px; /* Толщина рамки */
+    background: #000;     
+}
+.for_top_text{     
+    padding: 0 0 0 32px; 
+    flex:1;    
+}
+.for_top_title{     
+    position: relative;
+    top: -4px;
+    font-size: 32px;
+    font-weight: 500;
+}  
+.for_top_subtitle{
+   padding: 20px 0 0 0; 
+   font-size: 16px;
+   line-height: 26px;
+}
+.for_bottom{
+    padding: 56px 0 0 0;
+}
+.for_bottom_title{
+    font-size: 20px;
+    font-weight: 500;    
+    display: flex;
+    align-items: center;
+    & img{         
+        width: 24px;         
+        margin: 0 20px 0 10px;         
+    }     
+    & hr{
+        height: 1px;
+        background: #E8E8E9;     
+        flex: 1;
+        border: none;
+    }
+}
+.for_bottom_subtitle{
+    padding: 16px 0 0 0; 
+    font-size: 16px;
+    line-height: 26px;
+    position: relative;
+    &:before{
+        content:"";
+        display:block;
+        width: 100%;
+        height:100%;
+        position:absolute;
+        top:0;
+        left: 0;
+        background-image:linear-gradient(to top, rgba(255, 255, 255, 0), #fff 90%)
+    }
+} 
+@media screen and (max-width: 660px){
+    .wrap{
+        padding: 0 0 200px 20px;        
+        max-width: 100%;
+        margin: 50px auto 0 0;
+    }
+    .wrap_slider_for{         
+        & .slick-prev{  
+            left: auto;
+            top: auto;
+            bottom: -100px;
+            right: 96px;               
+            z-index: 1000;         
+            width: 56px;
+            height: 56px;
+            border: 2px solid #000;
+            border-right: 1px solid #000;         
+            background: #fff;
+            background-image: url('./../img/arrow_left.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            &::before{
+                font-size: 0;
+            }
+            &:hover{
+                border: 2px solid #0054A6;
+                border-right: 1px solid #0054A6;         
+                background-image: url('./../img/arrow_left_hover.svg'); 
+                background-repeat: no-repeat;
+                background-position: center;           
+            }      
+        }
+        & .slick-next{
+            left: auto;
+            top: auto;
+            right: 40px;
+            bottom: -100px;            
+            width: 56px;
+            height: 56px;
+            border: 2px solid #000;
+            border-left: 1px solid #000;
+            background: #fff;
+            background-image: url('./../img/arrow_right.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            z-index: 1000;        
+            &::before{
+                font-size: 0;
+            }
+            &:hover{
+                border: 2px solid #0054A6;
+                border-left: 1px solid #0054A6;                   
+                background-image: url('./../img/arrow_right_hover.svg');
+                background-repeat: no-repeat;
+                background-position: center;           
+            } 
+        }
+        & .slick-prev.slick-disabled{
+            border: 2px solid #E8E8E9;
+            border-right: 1px solid #000;
+            background-image: url('./../img/arrow_left_disabled.svg'); 
+            background-repeat: no-repeat;
+            background-position: center;       
+        }     
+        & .slick-next.slick-disabled{
+            border: 2px solid #E8E8E9;
+            border-left: 1px solid #000;             
+            background-image: url('./../img/arow_right_disabled.svg');
+            background-repeat: no-repeat;
+            background-position: center;    
+        }
+    }
+    .for_counter {
+        top: auto;
+        bottom: -50px;
+        left: 0;
+    }
+    .slider-for{  
+        padding: 20px 0 0 0;     
+        max-width: 91%;
+        & .for_top_img{
+            display: none;
+        }
+        & .for_top_text{
+            padding: 0;
+        } 
+        & .for_top_title{
+            font-size: 24px;
+        }
+        & .for_top_subtitle {
+            padding: 4px 0 0 0;
+        }
+        & .for_bottom {
+            padding: 32px 0 0 0;
+        }
+        & .for_bottom_subtitle:before{
+            display: none;
+        }                 
+    }    
+    .slider-nav{         
+        & .nav_year{
+            display: none;
+        }
+        &::after {     
+            right: auto;  
+            margin-right: 0;  
+            width: 100%;
+        }
+        & .nav_img{                         
+            width: auto;
+            height: auto;            
+        }
+        & .slick-track {
+            padding: 0px 0 0px 0;
+        }
+        & .slick-slide{
+            padding-right: 20px;             
+        }
+        & .slick-list{               
+            padding: 0 66px 0 0  !important ;           
+        }
+        & .slider_slide{
+            width: 94vw !important;
+        }
+    }     
+    .slider-nav-slide--active {
+        & .nav_img{                  
+            transform: scale(1) !important;               
+        }         
+    }     
+}  
