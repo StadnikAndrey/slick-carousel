@@ -5,4 +5,4 @@
 HTML, CSS  
 webpack 5  
 npm 
-плагин slick-carousel 
+плагин "slick-carousel"  
