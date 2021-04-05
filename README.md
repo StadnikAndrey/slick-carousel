@@ -4,5 +4,5 @@
 ## Технологии и инструменты: 
 HTML, CSS  
 webpack 5  
-npm 
+npm  
 плагин "slick-carousel"  
