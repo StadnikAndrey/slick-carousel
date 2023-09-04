@@ -1,8 +1,8 @@
 # slick-carousel
-верстка слайдера фотографий (slick-carousel) для desktop и mobile 
+photo slider layout (slick-carousel) for desktop and mobile
 
-## Технологии и инструменты: 
+## Technologies and tools:
 HTML, SCSS  
 webpack 5  
 npm  
-плагин "slick-carousel"  
+plugin "slick-carousel"  
